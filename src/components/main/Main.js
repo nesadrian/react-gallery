@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Searchbar from "../searchbar/Searchbar";
 import { Card } from "../card/Card";
-//import data from "../../mockdata";
 import "./main.css";
 import { Button } from "../button/Button";
 import { fetchPicturesUrl, fetchPicturesTerm } from "../../api";
@@ -12,6 +11,7 @@ export const Main = () => {
   useEffect(() => {
     const fetchData = async () => {
       const picture = await fetchPicturesUrl();
+      console.log(picture);
       setData(picture);
     };
     fetchData();
@@ -41,17 +41,19 @@ export const Main = () => {
           />
         ))
       )}
-      <Button
-        buttonName="Prev"
-        handleButtonClick={handleButtonClick}
-        url={data.prev}
-        disabled={data.next.match(/page=(\d+)/)[1] === "2"}
-      />
-      <Button
-        buttonName="Next"
-        handleButtonClick={handleButtonClick}
-        url={data.next}
-      />
+      <section className="pagination-buttons">
+        <Button
+          buttonName="Prev"
+          handleButtonClick={handleButtonClick}
+          url={data.prev}
+          disabled={data.next.match(/page=(\d+)/)[1] === "2"}
+        />
+        <Button
+          buttonName="Next"
+          handleButtonClick={handleButtonClick}
+          url={data.next}
+        />
+      </section>
     </main>
   );
 };

@@ -5,3 +5,7 @@ main {
   align-items: center;
   flex-direction: column;
 }
+
+.pagination-buttons {
+  display: flex;
+}

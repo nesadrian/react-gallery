@@ -1,0 +1,20 @@
+button {
+  padding: 12px 28px;
+  text-align: center;
+  background-color: #072e91;
+  border-radius: 4px;
+  border: none;
+  color: #ffff;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #031e63;
+}
+
+button:disabled {
+  background-color: #334a83;
+  cursor: default;
+}
