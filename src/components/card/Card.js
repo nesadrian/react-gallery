@@ -6,7 +6,7 @@ export const Card = ({ imgSrc, altDescription }) => {
     <article class="flip-card">
       <div class="inner">
         <div class="front">
-          <img src={imgSrc} alt={altDescription} />
+          <img class="image" src={imgSrc} alt={altDescription} />
         </div>
         <div class="back">
           <p>{altDescription}</p>
