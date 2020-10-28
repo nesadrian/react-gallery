@@ -9,7 +9,7 @@ export const Card = ({ imgSrc, altDescription }) => {
           <img src={imgSrc} alt={altDescription} />
         </div>
         <div class="back">
-          <p>ducks on water</p>
+          <p>{altDescription}</p>
         </div>
       </div>
     </article>
