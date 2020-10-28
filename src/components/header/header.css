@@ -1,0 +1,11 @@
+.header-container {
+  height: 100px;
+  background-color: aqua;
+}
+
+.logo {
+  width: 100%;
+  object-fit: contain;
+  height: 100%;
+  max-height: 150px;
+}
