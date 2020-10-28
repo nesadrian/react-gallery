@@ -7,20 +7,13 @@ import { fetchPicturesUrl, fetchPicturesTerm } from "../../api";
 
 export const Main = () => {
   const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const picture = await fetchPicturesUrl();
-      console.log(picture);
-      setData(picture);
-    };
-    fetchData();
-  }, []);
+  const [searchTerm, setSearchTerm] = useState(null);
 
   const handleSearch = async (e, val) => {
     e.preventDefault();
     const pictures = await fetchPicturesTerm(val);
     setData(pictures);
+    setSearchTerm(val);
   };
 
   const handleButtonClick = async (url) => {
@@ -32,34 +25,33 @@ export const Main = () => {
     <main className="main-container">
       <Searchbar handleSearch={handleSearch} />
       {!data.images ? (
-        <h1>No images available</h1>
+        <h1>No images to display. Use the searchbar above to search for images.</h1>
       ) : (
-        <div>
-        <h2>Showing images of {data.search ? data.search : "ducks"}</h2>
-        <div className="cards-container">
-        {data.images.map((image) => (
-          <Card
-            imgSrc={image.urls.small}
-            altDescription={image.alt_description}
-          />
-        ))}
-        </div>
-        </div>
-      )}
-      
-      <section className="pagination-buttons">
-        <Button
-          buttonName="Prev"
-          handleButtonClick={handleButtonClick}
-          url={data.prev}
-          // disabled={data.next.match(/page=(\d+)/)[1] === "2"}
-        />
-        <Button
-          buttonName="Next"
-          handleButtonClick={handleButtonClick}
-          url={data.next}
-        />
-      </section>
+          <div>
+            {searchTerm && <h2>Showing images of {searchTerm}</h2>}
+            <div className="cards-container">
+              {data.images.map((image) => (
+                <Card
+                  imgSrc={image.urls.small}
+                  altDescription={image.alt_description}
+                />
+              ))}
+            </div>
+            <section className="pagination-buttons">
+              <Button
+                buttonName="Prev"
+                handleButtonClick={handleButtonClick}
+                url={data.prev}
+                disabled={data.next.match(/page=(\d+)/)[1] === "2"}
+              />
+              <Button
+                buttonName="Next"
+                handleButtonClick={handleButtonClick}
+                url={data.next}
+              />
+            </section>
+          </div>
+        )}
     </main>
   );
 };
