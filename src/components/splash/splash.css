@@ -1,0 +1,16 @@
+.splash-container {
+    background-image: url('https://cdn.dribbble.com/users/976984/screenshots/4149087/blob.gif');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-decoration: none;
+    color: #12776F;
+}
+
+.a {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}

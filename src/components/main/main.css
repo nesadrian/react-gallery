@@ -9,6 +9,9 @@ main {
 main h1 {
   width: 80%;
   text-align: center;
+  font-size: 1.5em;
+  color: #12776F;
+  margin: 20px;
 }
 
 .cards-container {
@@ -28,6 +31,7 @@ h2 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: #12776F;
 }
 
 /* @media only screen and (min-width: 600px) {

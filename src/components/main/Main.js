@@ -4,16 +4,37 @@ import { Card } from "../card/Card";
 import "./main.css";
 import { Button } from "../button/Button";
 import { fetchPicturesUrl, fetchPicturesTerm } from "../../api";
+import { useLocalStorage } from "@rehooks/local-storage";
 
-export const Main = () => {
+export const Main = (props) => {
+  let rocco;
+  if (!props.searchTerm) {
+    rocco = "";
+  } else {
+    rocco = props.searchTerm.searchTerm
+  }
   const [data, setData] = useState([]);
-  const [searchTerm, setSearchTerm] = useState(null);
+  const [searchTerm, setSearchTerm] = useState(rocco)
+  const [history, setHistory] = useLocalStorage("terms");
+
+  useEffect(() => {
+    if (searchTerm.length >= 1) handleSearch(null, searchTerm)
+  }, [])
 
   const handleSearch = async (e, val) => {
-    e.preventDefault();
+    console.log(val);
+    if (e) e.preventDefault();
     const pictures = await fetchPicturesTerm(val);
-    setData(pictures);
-    setSearchTerm(val);
+    console.log(pictures);
+    try {
+      setData(pictures);
+      setSearchTerm(val);
+      const hist = history || [];
+      hist.push(val)
+      setHistory(hist);
+    } catch (err) {
+      console.log(err.message)
+    }
   };
 
   const handleButtonClick = async (url) => {
@@ -21,9 +42,10 @@ export const Main = () => {
     setData(pictures);
   };
 
+
   return (
     <main className="main-container">
-      <Searchbar handleSearch={handleSearch} />
+      <Searchbar handleSearch={handleSearch} history={history} />
       {!data.images ? (
         <h1>No images to display. Use the searchbar above to search for images.</h1>
       ) : (

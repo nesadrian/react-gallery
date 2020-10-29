@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./searchbar.css";
 
-function Searchbar({ handleSearch }) {
+function Searchbar({ handleSearch, history }) {
   const [inpVal, setInpVal] = useState("");
 
   return (
@@ -11,7 +11,11 @@ function Searchbar({ handleSearch }) {
         type="text"
         onChange={(e) => setInpVal(e.target.value)}
         placeholder="Type something..."
+        list="history"
       />
+      {history ? <datalist className="test" id="history">
+        {history.map(term => <option value={term} />)}
+      </datalist> : null}
     </form>
   );
 }
