@@ -15,5 +15,7 @@ export const fetchPicturesUrl = async (url = defaultUrl) => {
 
 export const fetchPicturesTerm = async (term) => {
   const url = `${baseURL}?client_id=${API_KEY}&query=${term}`;
-  return fetchPicturesUrl(url);
+  const data = await fetchPicturesUrl(url)
+  const dataWithTerm = {...data, search: term};
+  return dataWithTerm;
 };

@@ -1,6 +1,7 @@
 .page-footer {
-  height: 15px;
+  width: 100vw;
   text-align: center;
+  align-self: flex-end;
 }
 
 .page-footer_txt {

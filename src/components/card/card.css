@@ -1,8 +1,9 @@
 .flip-card {
   background-color: transparent;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   perspective: 1000px;
+  margin: 10px;
 }
 
 .flip-card .inner {
@@ -13,8 +14,19 @@
   transform-style: preserve-3d;
 }
 
-.flip-card .inner .front,
-.flip-card .inner .back {
+.flip-card .back {
+  height: 300px;
+  width: 300px;
+  text-align: center;
+  padding: 40px;
+}
+
+.image {
+  width: 300px;
+  height: 300px;
+}
+
+.flip-card .inner .front, .flip-card .inner .back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -28,12 +40,10 @@
   background-color: white;
 }
 
-.front img {
-}
-
 .flip-card .inner .back {
   transform: rotateY(180deg);
 }
+
 .flip-card:hover .inner {
   transform: rotateY(180deg);
 }
