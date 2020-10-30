@@ -1,7 +1,7 @@
 .page-footer {
   width: 100vw;
   text-align: center;
-  align-self: flex-end;
+  margin-top: auto;
 }
 
 .page-footer_txt {

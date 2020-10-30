@@ -1,0 +1,21 @@
+.nav-container {
+    display: flex;
+}
+
+.nav-container ul {
+    display: flex;
+}
+
+.nav-container li {
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.nav-container li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-container li a:hover{
+    border-bottom: 2px solid #fff;
+}

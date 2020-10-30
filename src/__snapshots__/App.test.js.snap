@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering test core functionailty renders about page correctly 1`] = `
+<div
+  className="about-container"
+>
+  <h1>
+    About
+  </h1>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget tortor sit amet mi lacinia ultricies. In blandit nunc mi, non interdum eros lacinia gravida. Integer at pulvinar sem. Nullam ac pretium purus, eu tincidunt magna. Aenean mattis quam non neque dapibus elementum non ac orci. Mauris in eros elit. Donec hendrerit semper magna. Etiam finibus pellentesque quam eu pretium. Vivamus bibendum sagittis felis eget dictum. Aliquam erat volutpat. Suspendisse potenti. Proin sagittis hendrerit augue nec pellentesque. Quisque ex dui, euismod ac leo ac, volutpat bibendum lacus. Integer ac velit nec lacus viverra aliquet id eu diam. Quisque imperdiet eu augue sit amet tristique. Sed in felis enim. Phasellus nec mi id ligula scelerisque molestie et sed tortor. Mauris finibus at massa ac dignissim. Sed ut dapibus nisi. Curabitur eleifend mattis purus, non sollicitudin augue ultricies at. Suspendisse commodo ac mi ac tristique. Integer ac blandit lorem. Phasellus justo lorem, feugiat at justo eu, imperdiet finibus arcu. Vivamus tortor ex, malesuada sit amet tincidunt non, condimentum non tellus.
+  </p>
+</div>
+`;
