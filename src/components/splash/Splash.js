@@ -18,7 +18,7 @@ const Splash = () => {
                     }}
                 /> : null}
                 <div>
-                    <Searchbar splashSearch={true} handleSearchVal={(val) => setSearchVal(val)} />
+                    <Searchbar splashSearch handleSearchVal={(val) => setSearchVal(val)} />
                 </div>
                 <div className="a">
                     <Link to="/search">
