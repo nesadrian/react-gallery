@@ -22,19 +22,13 @@ export const Main = (props) => {
   }, [])
 
   const handleSearch = async (e, val) => {
-    console.log(val);
     if (e) e.preventDefault();
     const pictures = await fetchPicturesTerm(val);
-    console.log(pictures);
-    try {
-      setData(pictures);
-      setSearchTerm(val);
-      const hist = history || [];
-      hist.push(val)
-      setHistory(hist);
-    } catch (err) {
-      console.log(err.message)
-    }
+    setData(pictures);
+    setSearchTerm(val);
+    const hist = history || [];
+    hist.push(val)
+    setHistory(hist);
   };
 
   const handleButtonClick = async (url) => {
