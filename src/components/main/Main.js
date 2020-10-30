@@ -18,16 +18,15 @@ export const Main = (props) => {
   const [history, setHistory] = useLocalStorage("terms");
 
   useEffect(() => {
-    if (searchTerm.length >= 1) handleSearch(null, searchTerm)
+    if (searchTerm.length >= 1) updateImages(searchTerm)
   }, [])
 
-  const handleSearch = async (e, val) => {
-    if (e) e.preventDefault();
-    const pictures = await fetchPicturesTerm(val);
+  const updateImages = async (searchTerm) => {
+    const pictures = await fetchPicturesTerm(searchTerm);
     setData(pictures);
-    setSearchTerm(val);
+    setSearchTerm(searchTerm);
     const hist = history || [];
-    hist.push(val)
+    hist.push(searchTerm)
     setHistory(hist);
   };
 
@@ -39,7 +38,7 @@ export const Main = (props) => {
 
   return (
     <main className="main-container">
-      <Searchbar handleSearch={handleSearch} history={history} />
+      <Searchbar handleSearchVal={updateImages} history={history} />
       {!data.images ? (
         <h1>No images to display. Use the searchbar above to search for images.</h1>
       ) : (

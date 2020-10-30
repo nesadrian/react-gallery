@@ -8,11 +8,6 @@ import './splash.css'
 const Splash = () => {
     const [searchVal, setSearchVal] = useState(null);
 
-    const handleSearch = async (e, val) => {
-        e.preventDefault();
-        setSearchVal(val)
-    };
-
     return (
         <div className="splash-container">
             {searchVal ? <Redirect
@@ -21,7 +16,7 @@ const Splash = () => {
                     state: { searchTerm: searchVal }
                 }}
             /> : null}
-            <Searchbar handleSearch={handleSearch} />
+            <Searchbar handleSearchVal={(val) => setSearchVal(val)} />
             <div className="a">
                 <Link to="/search">
                     <h1>ENTER</h1>
