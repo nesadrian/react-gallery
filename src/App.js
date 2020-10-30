@@ -5,6 +5,7 @@ import Footer from './components/footer/Footer';
 import { Main } from './components/main/Main';
 import About from './components/about/About'
 import Splash from './components/splash/Splash'
+import Random from './components/random/Random'
 import './App.css';
 
 function App() {
@@ -26,6 +27,11 @@ function App() {
           <Route path="/about" exact>
             <Header />
             <About />
+            <Footer />
+          </Route>
+          <Route path="/random" exact>
+            <Header />
+            <Random />
             <Footer />
           </Route>
         </Switch>

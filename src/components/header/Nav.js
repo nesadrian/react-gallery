@@ -13,6 +13,9 @@ export const Nav = () => {
                     <Link to="/search">Search</Link>
                 </li>
                 <li>
+                    <Link to="/random">Random</Link>
+                </li>
+                <li>
                     <Link to="/about">About</Link>
                 </li>
             </ul>
