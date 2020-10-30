@@ -43,7 +43,7 @@ export const Main = (props) => {
         <h1>No images to display. Use the searchbar above to search for images.</h1>
       ) : (
           <div>
-            {searchTerm && <h2>Showing images of {searchTerm}</h2>}
+            {searchTerm && <h2 className="search__term">Showing images of {searchTerm}</h2>}
             <div className="cards-container">
               {data.images.map((image) => (
                 <Card
@@ -66,7 +66,8 @@ export const Main = (props) => {
               />
             </section>
           </div>
-        )}
-    </main>
+        )
+      }
+    </main >
   );
 };

@@ -1,6 +1,6 @@
 const API_KEY = "m6YlL5WyMzEyxxi1F1bzFUDnbucvRjk16B74Zx121NM";
-const baseURL = "https://api.unsplash.com/search/photos/";
-const defaultUrl = `${baseURL}?client_id=${API_KEY}&query=ducks`;
+const baseURL = "https://api.unsplash.com/";
+const defaultUrl = `${baseURL}search/photos/?client_id=${API_KEY}&query=ducks`;
 
 export const fetchPicturesUrl = async (url = defaultUrl) => {
   try {
@@ -21,8 +21,17 @@ export const fetchPicturesUrl = async (url = defaultUrl) => {
 };
 
 export const fetchPicturesTerm = async (term) => {
-  const url = `${baseURL}?client_id=${API_KEY}&query=${term}`;
+  const url = `${baseURL}search/photos/?client_id=${API_KEY}&query=${term}`;
   const data = await fetchPicturesUrl(url)
   const dataWithTerm = { ...data, search: term };
   return dataWithTerm;
 };
+
+export const fetchPicturesRandom = async () => {
+  const url = `${baseURL}photos/random/?client_id=${API_KEY}&count=10`
+  const result = await fetch(url);
+  const data = await result.json();
+  return {
+    images: data.results || data
+  }
+}

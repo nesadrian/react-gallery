@@ -11,11 +11,22 @@
     margin-bottom: 10px;
 }
 
-.nav-container li a{
+.nav-container li a {
     text-decoration: none;
-    color: #fff;
+    color: #F5E2DB;
+    text-transform: uppercase;
 }
 
-.nav-container li a:hover{
+.nav-container li a:hover {
     border-bottom: 2px solid #fff;
+}
+
+@media only screen and (min-width: 1000px) {
+    .nav-container li {
+        margin-right: 40px;
+    }
+    .nav-container li a {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
 }

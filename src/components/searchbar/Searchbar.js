@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./searchbar.css";
 
-function Searchbar({ handleSearchVal, history }) {
+function Searchbar({ handleSearchVal, history, splashSearch }) {
   const [inpVal, setInpVal] = useState('');
 
   const handleSearch = e => {
@@ -13,11 +13,11 @@ function Searchbar({ handleSearchVal, history }) {
   return (
     <form className="form-card" onSubmit={e => handleSearch(e)}>
       <input
-        className="form-card_input"
+        className={`form-card_input ${splashSearch ? "try" : ''}`}
         type="text"
         value={inpVal}
         onChange={(e) => setInpVal(e.target.value)}
-        placeholder="Type something..."
+        placeholder="Search for pictures..."
         list="history"
       />
       {history ? <datalist className="test" id="history">
