@@ -13,4 +13,13 @@
   max-height: 70px;
 }
 
-
+@media only screen and (min-width: 1000px) {
+  .header-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .logo {
+    max-height: 200px;
+  }
+}

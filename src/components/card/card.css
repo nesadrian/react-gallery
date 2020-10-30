@@ -1,7 +1,7 @@
 .flip-card {
   background-color: transparent;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   perspective: 1000px;
   margin: 10px;
 }
@@ -15,15 +15,15 @@
 }
 
 .flip-card .back {
-  height: 300px;
-  width: 300px;
+  height: 400px;
+  width: 400px;
   text-align: center;
   padding: 40px;
 }
 
 .image {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
 }
 
 .flip-card .inner .front, .flip-card .inner .back {

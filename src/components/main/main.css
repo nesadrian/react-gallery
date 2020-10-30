@@ -1,5 +1,6 @@
 main {
-  width: 100%;
+  width: 90%;
+  margin: 20px auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,12 +27,13 @@ main h1 {
   justify-content: center;
 }
 
-h2 {
+.search__term {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   color: #12776F;
+  margin: 20px;
 }
 
 /* @media only screen and (min-width: 600px) {

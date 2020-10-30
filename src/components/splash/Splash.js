@@ -10,17 +10,21 @@ const Splash = () => {
 
     return (
         <div className="splash-container">
-            {searchVal ? <Redirect
-                to={{
-                    pathname: "/search",
-                    state: { searchTerm: searchVal }
-                }}
-            /> : null}
-            <Searchbar handleSearchVal={(val) => setSearchVal(val)} />
-            <div className="a">
-                <Link to="/search">
-                    <h1>ENTER</h1>
-                </Link>
+            <div className="bckg">
+                {searchVal ? <Redirect
+                    to={{
+                        pathname: "/search",
+                        state: { searchTerm: searchVal }
+                    }}
+                /> : null}
+                <div>
+                    <Searchbar splashSearch={true} handleSearchVal={(val) => setSearchVal(val)} />
+                </div>
+                <div className="a">
+                    <Link to="/search">
+                        ENTER
+                    </Link>
+                </div>
             </div>
         </div>
     )
