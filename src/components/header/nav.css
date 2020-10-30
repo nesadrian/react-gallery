@@ -13,7 +13,8 @@
 
 .nav-container li a {
     text-decoration: none;
-    color: #fff;
+    color: #F5E2DB;
+    text-transform: uppercase;
 }
 
 .nav-container li a:hover {

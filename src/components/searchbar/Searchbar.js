@@ -17,7 +17,7 @@ function Searchbar({ handleSearchVal, history, splashSearch }) {
         type="text"
         value={inpVal}
         onChange={(e) => setInpVal(e.target.value)}
-        placeholder="Please don't try this"
+        placeholder="Search for pictures..."
         list="history"
       />
       {history ? <datalist className="test" id="history">
